@@ -1,0 +1,20 @@
+.navbar {
+    position: fixed;
+    backdrop-filter: blur(10px);
+    background-color: #ffffff;
+    z-index: 1;
+    width: 100%;
+    top: 0rem;
+    height: 4rem;
+}
+
+.container {
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.menu-btn {
+    position: absolute;
+    right: 0.5rem;
+    top: 0.7rem;
+}

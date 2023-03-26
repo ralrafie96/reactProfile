@@ -1,0 +1,15 @@
+.card-container {
+    display: flex;
+}
+
+.card {
+    aspect-ratio: 5 / 7;
+}
+
+.card-xl {
+    color: #ffffff80;
+}
+
+.card-xs {
+    color: #ffffff80;
+}

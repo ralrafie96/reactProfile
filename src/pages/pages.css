@@ -1,0 +1,37 @@
+.page-container {
+    margin: 5rem 0rem 0rem 0rem
+}
+
+.title-card {
+    text-align: center;
+}
+
+.img {
+    display: flex;
+    justify-content: center;
+}
+
+.paragraph {
+    text-align: justify;
+    text-indent: 1rem;
+}
+
+.portfolio-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.bio-section {
+    padding-left: 3.4rem;
+    text-indent: -3.4rem;
+}
+
+.bio-year {
+    font-weight: bold;
+    margin-right: 1rem;
+    display: inline;
+}
+
+.like-section {
+    text-indent: 3.4rem
+}

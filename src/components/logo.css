@@ -1,0 +1,44 @@
+.logo-box {
+    font-weight: bold;
+    font-size: 18px;
+    display: inline-flex;
+    align-items: center;
+    height: 30px;
+    line-height: 20px;
+    padding: 10px 0px;
+    margin-top: 0.8rem;
+
+}
+
+.logo-text {
+    margin: 0rem;
+    font-family: 'M PLUS Rounded 1c';
+}
+
+.logo, .logo-dark {
+    -webkit-filter: drop-shadow(1px 1px 0 #202023) drop-shadow(-1px -1px 0 #202023) drop-shadow(-1px 1px 0 #202023) drop-shadow(1px -1px 0 #202023);
+    filter: drop-shadow(1px 1px 0 #202023) drop-shadow(-1px -1px 0 #202023) drop-shadow(-1px 1px 0 #202023) drop-shadow(1px -1px 0 #202023);
+    transform: rotate(0deg);
+    transition: all 0.5s ease;
+}
+
+.logo-dark {
+    -webkit-filter: drop-shadow(1px 1px 0 white) drop-shadow(-1px -1px 0 white)  drop-shadow(-1px 1px 0 white) drop-shadow(1px -1px 0 white);
+    filter: drop-shadow(1px 1px 0 white) drop-shadow(-1px -1px 0 white)  drop-shadow(-1px 1px 0 white) drop-shadow(1px -1px 0 white);
+}
+
+.logo:hover, .logo-dark:hover {
+    animation: logo-buzz 1s ease 0s infinite;
+}
+
+@keyframes logo-buzz {
+    10% {
+        transform: rotate(-20deg);
+    }
+    20% {
+        transform: rotate(20deg);
+    }
+    30% {
+        transform: rotate(0deg);
+    }
+}

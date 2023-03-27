@@ -111,10 +111,11 @@ const Page = () => {
                 </p>
             </Section>
             <Section delay={0.4}>
-                <Heading as="h3" variant={'section-title'}>
+                <Heading as="h3" variant='section-title'>
                     Gallery
                 </Heading>
                 <PhotoGroup />
+                Testing if something is here
             </Section>
         </Container>
     )

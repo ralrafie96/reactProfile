@@ -1,15 +1,18 @@
+import { Box } from "@chakra-ui/react"
+import './photo-group.css'
+
 const PhotoGroup = () => {
     return (
-        <div className="card-container">
-            <div className="card-xl"></div>
-            <div className="card-xs"></div>
-            <div className="card-xl"></div>
-            <div className="card-xs"></div>
-            <div className="card-xl"></div>
-            <div className="card-xs"></div>
-            <div className="card-xl"></div>
-            <div className="card-xs"></div>
-        </div>
+        <Box className="card-container">
+            <Box className="card card-xl"></Box>
+            <Box className="card card-xs"></Box>
+            <Box className="card card-xl"></Box>
+            <Box className="card card-xs"></Box>
+            <Box className="card card-xl"></Box>
+            <Box className="card card-xs"></Box>
+            <Box className="card card-xl"></Box>
+            <Box className="card card-xs"></Box>
+        </Box>
     )
 }
 

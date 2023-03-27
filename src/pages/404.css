@@ -1,0 +1,19 @@
+.not-found-container {
+    margin: 5rem 0rem 0rem 0rem;
+}
+
+.box-center {
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+.image {
+    margin: 3rem 0rem;
+    transform: rotate(180deg);
+    width: 4rem;
+}
+
+.home-btn {
+    margin-top: 1rem;
+}

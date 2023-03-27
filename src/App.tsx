@@ -8,6 +8,7 @@ import NavBar from './components/navbar'
 import Fonts from './components/fonts'
 import Gallery from './pages/gallery'
 import Works from './pages/works'
+import NotFound from './pages/404'
 
 function App() {
     return (
@@ -16,7 +17,8 @@ function App() {
             <BrowserRouter>
                 <NavBar />
                 <Routes>
-                    <Route path="*" element={<Navigate to="/home" replace />} />
+                    <Route path="*" element={<Navigate to="/404" replace />} />
+                    <Route path="/404" element={<NotFound />}></Route>
                     <Route path="/home" element={<Page />}></Route>
                     <Route path="/gallery" element={<Gallery />}></Route>
                     <Route path="/works" element={<Works />}></Route>

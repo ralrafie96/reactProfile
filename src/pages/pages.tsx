@@ -14,6 +14,16 @@ import { useNavigate } from 'react-router-dom'
 import PhotoGroup from '../components/photo-group'
 const Page = () => {
     const navigate = useNavigate()
+    const imgList = [
+        'gallery1.jpg',
+        'gallery2.jpg',
+        'gallery3.jpg',
+        'gallery4.jpg',
+        'gallery5.jpg',
+        'gallery6.jpg',
+        'gallery7.jpg',
+        'gallery8.jpg'
+    ]
     return (
         <Container className="page-container">
             <Box
@@ -79,28 +89,28 @@ const Page = () => {
                 <Heading as="h3" variant="section-title">
                     Bio
                 </Heading>
-                <p className="bio-section">
+                <div className="bio-section">
                     <p className="bio-year">1996</p>Born in Indianapolis,
                     Indiana
-                </p>
-                <p className="bio-section">
+                </div>
+                <div className="bio-section">
                     <p className="bio-year">2018</p>Graduated from Indiana
                     University Purdue University Indianapolis with a
                     Bachelor&apos;s in Biomedical Engineering
-                </p>
-                <p className="bio-section">
+                </div>
+                <div className="bio-section">
                     <p className="bio-year">2018</p>Began journey to become a
                     Full-Stack Developer by joining with Infosys
-                </p>
-                <p className="bio-section">
+                </div>
+                <div className="bio-section">
                     <p className="bio-year">2019</p>Contracted to Cummins to
                     develop React and Angular web applications, and PyQt5
                     desktop applications
-                </p>
-                <p className="bio-section">
+                </div>
+                <div className="bio-section">
                     <p className="bio-year">Today</p>Continuing to upskill in
                     different technologies, and improve on UX/UI design
-                </p>
+                </div>
             </Section>
             <Section delay={0.3}>
                 <Heading as="h3" variant="section-title">
@@ -111,11 +121,12 @@ const Page = () => {
                 </p>
             </Section>
             <Section delay={0.4}>
-                <Heading as="h3" variant='section-title'>
+                <Heading as="h3" variant="section-title">
                     Gallery
                 </Heading>
-                <PhotoGroup />
-                Testing if something is here
+                <Box onClick={() => navigate('/gallery')}>
+                    <PhotoGroup imgList={imgList} />
+                </Box>
             </Section>
         </Container>
     )

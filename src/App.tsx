@@ -6,6 +6,8 @@ import Page from './pages/pages'
 import theme from './libs/theme'
 import NavBar from './components/navbar'
 import Fonts from './components/fonts'
+import Gallery from './pages/gallery'
+import Works from './pages/works'
 
 function App() {
     return (
@@ -16,6 +18,8 @@ function App() {
                 <Routes>
                     <Route path="*" element={<Navigate to="/home" replace />} />
                     <Route path="/home" element={<Page />}></Route>
+                    <Route path="/gallery" element={<Gallery />}></Route>
+                    <Route path="/works" element={<Works />}></Route>
                 </Routes>
             </BrowserRouter>
         </ChakraProvider>

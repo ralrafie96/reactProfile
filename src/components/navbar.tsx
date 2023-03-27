@@ -27,6 +27,8 @@ interface LinkItemProps {
 }
 
 const LinkItem = ({ href, path, children }: LinkItemProps) => {
+    console.log('href ' + href)
+    console.log('path ' + path)
     const active = path === href
     const inactiveColor = useColorModeValue('gray.800', 'whiteAlpha.900')
     return (
@@ -44,7 +46,6 @@ const LinkItem = ({ href, path, children }: LinkItemProps) => {
 
 const NavBar = () => {
     const location = useLocation()
-    console.log(location)
     return (
         <Box
             className="navbar"
@@ -61,9 +62,6 @@ const NavBar = () => {
                 p={2}
                 maxW="container.md"
                 className="container"
-                // wrap="wrap"
-                // align="center"
-                // justify="space-between"
             >
                 <Flex align="center" mr={5}>
                     <Heading as="h1" size="lg" letterSpacing={'tighter'}>
@@ -78,11 +76,14 @@ const NavBar = () => {
                     flexGrow={1}
                     mt={{ base: 4, nmd: 0 }}
                 >
-                    <LinkItem href="/works" path={location.state}>
+                    <LinkItem href="/works" path={location.pathname}>
                         Works
                     </LinkItem>
-                    <LinkItem href="/posts" path={location.state}>
+                    <LinkItem href="/posts" path={location.pathname}>
                         Posts
+                    </LinkItem>
+                    <LinkItem href="/gallery" path={location.pathname}>
+                        Gallery
                     </LinkItem>
                 </Stack>
                 <Box className="menu-btn" flex={1}>

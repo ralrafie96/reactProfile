@@ -1,84 +1,85 @@
 .card-container {
-    height: 15rem;
+    height: 20rem;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .card {
     aspect-ratio: 5 / 7;
     position: absolute;
     border-radius: 4px;
+    background-color: #f0e7db80;
     transition: all 0.8s ease;
+    padding: 3px;
 }
 
 .card:hover {
-    background-color: rgba(0, 0, 255, 80%)
+    background-color: #88ccca;
 }
 
 .card-xl {
-    width: 6rem;
-    background-color: #ffffff80;
+    width: 8rem;
 }
 
 .card-xs {
     width: 2rem;
-    background-color: #ffffff80;
 }
 
-.card-xl:nth-child(1) {
+.card-xl:nth-child(2) {
     transform: translateX(-10%) rotate(-3deg);
 }
-.card-container:hover > .card-xl:nth-child(1) {
-    transform: translateX(-60%) translateY(2%) rotate(-15deg)
+.card-container:hover > .card-xl:nth-child(2) {
+    transform: translateX(-90%) translateY(2%) rotate(-15deg)
 }
 
-.card-xl:nth-child(3) {
+.card-xl:nth-child(4) {
     transform: translateX(-5%) rotate(-1deg);
 }
-.card-container:hover > .card-xl:nth-child(3) {
-    transform: translateX(-15%) rotate(-5deg)
+.card-container:hover > .card-xl:nth-child(4) {
+    transform: translateX(-30%) translateY(-5%) rotate(-5deg)
 }
 
-.card-xl:nth-child(5) {
+.card-xl:nth-child(6) {
     transform: translateX(5%) rotate(1deg)
 }
-.card-container:hover > .card-xl:nth-child(5) {
-    transform: translateX(15%) rotate(5deg)
+.card-container:hover > .card-xl:nth-child(6) {
+    transform: translateX(30%) translateY(-5%) rotate(5deg)
 }
 
-.card-xl:nth-child(7) {
+.card-xl:nth-child(8) {
     transform: translateX(10%) rotate(3deg)
 }
-.card-container:hover > .card-xl:nth-child(7) {
-    transform: translateX(60%) translateY(2%) rotate(15deg)
+.card-container:hover > .card-xl:nth-child(8) {
+    transform: translateX(90%) translateY(2%) rotate(15deg)
 }
 
-.card-xs:nth-child(2) {
+.card-xs:nth-child(1) {
     transform: translateX(-10%) rotate(-3deg);
 }
-.card-container:hover > .card-xs:nth-child(2) {
-    transform: translateX(-250%) translateY(-200%) rotate(30deg)
+.card-container:hover > .card-xs:nth-child(1) {
+    transform: translateX(-450%) translateY(-250%) rotate(30deg)
 }
 
-.card-xs:nth-child(4) {
+.card-xs:nth-child(3) {
     transform: translateX(-5%) rotate(-1deg);
 }
-.card-container:hover > .card-xs:nth-child(4) {
-    transform: translateX(-15%) rotate(-5deg)
+.card-container:hover > .card-xs:nth-child(3) {
+    transform: translateX(450%) translateY(-250%) rotate(-30deg)
 }
 
-.card-xs:nth-child(6) {
+.card-xs:nth-child(5) {
     transform: translateX(5%) rotate(1deg)
 }
-.card-container:hover > .card-xs:nth-child(6) {
-    transform: translateX(15%) rotate(5deg)
+.card-container:hover > .card-xs:nth-child(5) {
+    transform: translateX(450%) translateY(250%) rotate(30deg)
 }
 
-.card-xs:nth-child(8) {
+.card-xs:nth-child(7) {
     transform: translateX(10%) rotate(3deg)
 }
-.card-container:hover > .card-xs:nth-child(8) {
-    transform: translateX(60%) translateY(2%) rotate(15deg)
+.card-container:hover > .card-xs:nth-child(7) {
+    transform: translateX(-450%) translateY(250%) rotate(-30deg)
 }

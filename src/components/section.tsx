@@ -11,20 +11,19 @@ interface SectionProps {
     children: any
     delay: number
 }
-const Section = ({ children, delay = 0 }: SectionProps) => (
-    <StyledDiv
-        initial={{ y: 10, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        // transition={{ duration: '0.8' }}
-        // transitionDelay={{ duration: delay.toString() }}
-        style={{
-            transition: `all 0.8s ${delay}s`
-            // transitionDelay: `${delay}s`
-        }}
+const Section = ({ children, delay = 0 }: SectionProps) => {
+    console.log(delay)
+    return (
+    <StyledDiv className='styled-div'
+        animate={{ y: [10, 0], opacity: [0, 1] }}
+        transition={{
+            duration: '0.8',
+            delay: `${delay}`
+          }}
         mb={6}
     >
         {children}
     </StyledDiv>
-)
+)}
 
 export default Section

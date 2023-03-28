@@ -4,7 +4,7 @@ import { mode, StyleFunctionProps } from '@chakra-ui/theme-tools'
 const styles = {
     global: (props: Record<string, any> | StyleFunctionProps) => ({
         body: {
-            bg: mode('#f0e7db', '#202023')(props)
+            bg: mode('#f0e7db', '#202023')(props),
         }
     })
 }
@@ -13,13 +13,13 @@ const components = {
     Heading: {
         variants: {
             'section-title': {
-                TextDecoration: 'underline',
+                textDecoration: 'underline',
                 fontSize: 20,
                 textUnderlineOffset: 6,
                 textDecorationColor: '#525252',
                 textDecorationThickness: 4,
                 marginTop: 3,
-                marginBottom: 4
+                marginBottom: 4,
             }
         }
     },
@@ -41,7 +41,8 @@ const colors = {
 
 const config = {
     initialColorMode: 'dark',
-    useSystemColorMode: true
+    useSystemColorMode: true,
+    disableTransitionOnChange: false
 }
 
 const theme = extendTheme({

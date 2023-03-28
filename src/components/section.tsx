@@ -12,7 +12,6 @@ interface SectionProps {
     delay: number
 }
 const Section = ({ children, delay = 0 }: SectionProps) => {
-    console.log(delay)
     return (
     <StyledDiv className='styled-div'
         animate={{ y: [10, 0], opacity: [0, 1] }}

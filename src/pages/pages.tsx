@@ -56,7 +56,8 @@ const Page = () => {
                         )}
                         borderWidth={2}
                         borderStyle="solid"
-                        maxWidth="100px"
+                        width="100px"
+                        height="100px"
                         display="inline-block"
                         borderRadius="full"
                         src="profile_photo.jpg"

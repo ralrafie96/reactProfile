@@ -17,6 +17,7 @@ function App() {
             <BrowserRouter>
                 <NavBar />
                 <Routes>
+                    <Route path="/" element={<Navigate to="/home" />} />
                     <Route path="*" element={<Navigate to="/404" replace />} />
                     <Route path="/404" element={<NotFound />}></Route>
                     <Route path="/home" element={<Page />}></Route>

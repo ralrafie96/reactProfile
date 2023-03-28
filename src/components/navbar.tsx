@@ -27,8 +27,6 @@ interface LinkItemProps {
 }
 
 const LinkItem = ({ href, path, children }: LinkItemProps) => {
-    console.log('href ' + href)
-    console.log('path ' + path)
     const active = path === href
     const inactiveColor = useColorModeValue('gray.800', 'whiteAlpha.900')
     return (

@@ -10,6 +10,7 @@ import Gallery from './pages/gallery'
 import Works from './pages/works'
 import NotFound from './pages/404'
 import ScrollToTop from './components/scroll-to-top'
+import Contact from './pages/contact'
 
 function App() {
     return (
@@ -25,6 +26,7 @@ function App() {
                     <Route path="/home" element={<Page />}></Route>
                     <Route path="/gallery" element={<Gallery />}></Route>
                     <Route path="/works" element={<Works />}></Route>
+                    <Route path="/contact" element={<Contact />}></Route>
                 </Routes>
             </BrowserRouter>
         </ChakraProvider>

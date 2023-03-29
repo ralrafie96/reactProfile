@@ -28,6 +28,7 @@
 
 .row-container {
     white-space: nowrap;
+    cursor: grab;
 }
 
 .gi-container {

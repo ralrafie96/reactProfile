@@ -1,4 +1,5 @@
-import { Box, Container, Heading, useColorModeValue } from '@chakra-ui/react'
+import { Box, Container, Divider, Heading, useColorModeValue } from '@chakra-ui/react'
+import ScrollContainer from 'react-indiana-drag-scroll'
 import PhotoCard from '../components/photo-card'
 import Section from '../components/section'
 import './gallery.css'
@@ -33,8 +34,8 @@ const GalleryRow = ({imgLst}: GalleryRowProps) => {
         let delay: number = delayLst[delayIndex]
         delayLst.splice(delayIndex, 1)
         rows.push(
-            <Box className='gi-container'>
-                <GalleryItem src={src} delay={delay} key={src}/>
+            <Box className='gi-container' key={src}>
+                <GalleryItem src={src} delay={delay} />
             </Box>
         )
     }
@@ -79,13 +80,14 @@ const Gallery = () => {
                 Hello, the Gallery Page will go here!
             </Box>
             <Heading variant="section-title">Portraits</Heading>
-            <Box className="gr-container">
+            <ScrollContainer className="gr-container">
                 <GalleryRow imgLst={imgLst1}/>
-            </Box>
+            </ScrollContainer>
+            <Divider borderColor={useColorModeValue('gray.800', 'whiteAlpha.500')}/>
             <Heading variant="section-title">Europe</Heading>
-            <Box className="gr-container">
+            <ScrollContainer className="gr-container">
                 <GalleryRow imgLst={imgLst2}/>
-            </Box>
+            </ScrollContainer>
         </Container>
     )
 }

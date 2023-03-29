@@ -21,19 +21,20 @@ import Logo from './logo'
 import ThemeToggleBtn from './theme-toggle-btn'
 
 interface LinkItemProps {
+    p?: number
     href: string
     path: string
     children: any
 }
 
-const LinkItem = ({ href, path, children }: LinkItemProps) => {
+const LinkItem = ({ p = 2, href, path, children }: LinkItemProps) => {
     const active = path === href
     const inactiveColor = useColorModeValue('gray.800', 'whiteAlpha.900')
     return (
         <Link
             as={ReactRouterLink}
             to={href}
-            p={2}
+            p={p}
             bg={active ? 'glassTeal' : undefined}
             color={active ? '#202023' : inactiveColor}
         >
@@ -83,6 +84,9 @@ const NavBar = () => {
                     <LinkItem href="/gallery" path={location.pathname}>
                         Gallery
                     </LinkItem>
+                    <LinkItem href="/contact" path={location.pathname}>
+                        Contact
+                    </LinkItem>
                 </Stack>
                 <Box className="menu-btn" flex={1}>
                     <ThemeToggleBtn />
@@ -93,9 +97,21 @@ const NavBar = () => {
                                 icon={<HamburgerIcon />}
                             ></MenuButton>
                             <MenuList>
-                                <MenuItem as={Link}>About</MenuItem>
-                                <MenuItem as={Link}>Works</MenuItem>
-                                <MenuItem as={Link}>Posts</MenuItem>
+                                <LinkItem p={0} href='/home' path={location.pathname}>
+                                    <MenuItem bg={location.pathname === '/home' ? 'glassTeal' : undefined}>Home</MenuItem>
+                                </LinkItem>
+                                <LinkItem p={0} href='/works' path={location.pathname}>
+                                    <MenuItem bg={location.pathname === '/works' ? 'glassTeal' : undefined}>Works</MenuItem>
+                                </LinkItem>
+                                <LinkItem p={0} href='/posts' path={location.pathname}>
+                                    <MenuItem bg={location.pathname === '/posts' ? 'glassTeal' : undefined}>Posts</MenuItem>
+                                </LinkItem>
+                                <LinkItem p={0} href='/gallery' path={location.pathname}>
+                                    <MenuItem bg={location.pathname === '/gallery' ? 'glassTeal' : undefined}>Gallery</MenuItem>
+                                </LinkItem>
+                                <LinkItem p={0} href='/contact' path={location.pathname}>
+                                    <MenuItem bg={location.pathname === '/contact' ? 'glassTeal' : undefined}>Contact</MenuItem>
+                                </LinkItem>
                             </MenuList>
                         </Menu>
                     </Box>

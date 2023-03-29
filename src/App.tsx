@@ -9,6 +9,7 @@ import Fonts from './components/fonts'
 import Gallery from './pages/gallery'
 import Works from './pages/works'
 import NotFound from './pages/404'
+import ScrollToTop from './components/scroll-to-top'
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
             <Fonts />
             <BrowserRouter>
                 <NavBar />
+                <ScrollToTop />
                 <Routes>
                     <Route path="/" element={<Navigate to="/home" />} />
                     <Route path="*" element={<Navigate to="/404" replace />} />

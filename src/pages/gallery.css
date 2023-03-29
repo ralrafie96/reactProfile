@@ -1,0 +1,39 @@
+.gallery-container {
+    margin: 5rem 0rem 0rem 0rem;
+    overflow-x: hidden;
+    max-width: 100% !important;
+}
+
+.title-card {
+    position: relative;
+    margin: auto;
+    max-width: 60ch;
+    box-sizing: border-box;
+}
+
+.gallery-item {
+    position: relative;
+    margin: 1rem;
+}
+
+.gr-container {
+    /* max-width: 100%; */
+    display: block;
+    /* gap: 1rem; */
+    /* height: 36rem; */
+    /* width: 500%; */
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.row-container {
+    white-space: nowrap;
+}
+
+.gi-container {
+    display: inline-block;
+}
+
+/* .gr-container > .gallery-item {
+    display: inline-block;
+} */

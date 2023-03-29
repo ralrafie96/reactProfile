@@ -1,0 +1,25 @@
+.card, .card-loading {
+    aspect-ratio: 5 / 7;
+    position: relative;
+    border-radius: 4px;
+    background-color: #f0e7db80;
+    transition: all 0.8s ease;
+    padding: 3px;
+}
+
+.card:hover, .card-loading:hover  {
+    background-color: #88ccca;
+}
+
+.card-loading {
+    animation: card-load 1s ease 0s infinite alternate;
+}
+
+@keyframes card-load {
+    0% {
+        background-color: #f0e7db80;
+    }
+    100% {
+        background-color: #88ccca;
+    }
+}

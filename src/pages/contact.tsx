@@ -9,44 +9,57 @@ import {
     Input,
     Button
 } from '@chakra-ui/react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './contact.css'
 
 const Contact = () => {
+
     const [fn, setFn] = useState('')
     const [ln, setLn] = useState('')
     const [email, setEmail] = useState('')
     const [fnMsg, setFnMsg] = useState('')
     const [lnMsg, setLnMsg] = useState('')
     const [emailMsg, setEmailMsg] = useState('')
-    const emailValidation = new RegExp('^.+@.+..+')
+    const [isDisabled, setIsDisabled] = useState(true)
+    const emailValidation = new RegExp('^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$')
+
+    useEffect(() => {
+        console.log('in useEffect')
+        validateFields()
+      });
 
     const validateFn = () => {
-        if (fn.match(emailValidation) == null) {
-            setFnMsg('Please enter a valid email.')
+        if (!fn.trim()) {
+            setFnMsg('Please enter a First Name.')
+        } else {
+            setFnMsg('')
         }
     }
 
     const validateLn = () => {
-        if (ln.match(emailValidation) == null) {
-            setLnMsg('Please enter a valid email.')
+        if (!ln.trim()) {
+            setLnMsg('Please enter a Last Name.')
+        } else {
+            setLnMsg('')
         }
     }
 
     const validateEmail = () => {
-        if (email.match(emailValidation) == null) {
-            setEmailMsg('Please enter a valid email.')
+        if (!email.trim()) {
+            setEmailMsg('Please enter an Email Address.')
+        } else if (email.match(emailValidation) === null) {
+            setEmailMsg('Please enter a valid Email Address.')
+        } else {
+            setEmailMsg('')
         }
     }
 
-    const validateFields = (e: any) => {
-        console.log(e.target)
-        if (e) {
-            setFn('test')
-            setLn('test')
-            setEmail('test')
+    const validateFields = () => {
+        if (fnMsg === '' && lnMsg === '' && emailMsg === '' && fn !== '' && ln !== '' && email !== '') {
+            setIsDisabled(false)
+        } else {
+            setIsDisabled(true)
         }
-        e.preventDefault()
     }
     return (
         <Container className="page-container">
@@ -59,7 +72,7 @@ const Contact = () => {
             >
                 Don&apos;t be shy, give it a try!
             </Box>
-            <form onSubmit={validateFields}>
+            <form onSubmit={(e) => {console.log('submitted form!'); e.preventDefault()}}>
                 <FormControl>
                     <Box
                         className="full-name"
@@ -76,13 +89,12 @@ const Contact = () => {
                                     setFn(e.currentTarget.value)
                                 }}
                                 onBlur={() => {
-                                    console.log('blurred')
                                     validateFn()
                                 }}
                                 className="name"
                                 type="first-name"
                             />
-                            <FormHelperText>{fnMsg}</FormHelperText>
+                            <FormHelperText className='helper-text'>{fnMsg}</FormHelperText>
                         </Box>
                         <Box
                             className="name"
@@ -95,13 +107,12 @@ const Contact = () => {
                                     setLn(e.currentTarget.value)
                                 }}
                                 onBlur={() => {
-                                    console.log('blurred')
                                     validateLn()
                                 }}
                                 className="name"
                                 type="last-name"
                             />
-                            <FormHelperText>{lnMsg}</FormHelperText>
+                            <FormHelperText className='helper-text'>{lnMsg}</FormHelperText>
                         </Box>
                     </Box>
                     <FormLabel>Email address</FormLabel>
@@ -111,12 +122,11 @@ const Contact = () => {
                             setEmail(e.currentTarget.value)
                         }}
                         onBlur={() => {
-                            console.log('blurred')
                             validateEmail()
                         }}
                     />
-                    <FormHelperText>{emailMsg}</FormHelperText>
-                    <Button type="submit" colorScheme="teal">
+                    <FormHelperText className='helper-text'>{emailMsg}</FormHelperText>
+                    <Button isDisabled={isDisabled} type="submit" colorScheme="teal">
                         Submit
                     </Button>
                 </FormControl>

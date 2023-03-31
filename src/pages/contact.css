@@ -7,12 +7,18 @@
 }
 
 .full-name {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     /* white-space: nowrap; */
     width: 100%
 }
 
-.name {
-    /* width: calc(50% - 0.5rem); */
-    /* margin-right: 1rem; */
+/* .name {
     display: inline-block;
+} */
+
+.helper-text {
+    display: flex;
+    height: 1.3rem;
 }

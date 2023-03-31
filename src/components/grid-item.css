@@ -1,0 +1,8 @@
+.grid-item-container {
+    width: 100%;
+    align-items: center;
+}
+
+.link-box {
+    cursor: pointer;
+}

@@ -1,4 +1,4 @@
-import { Box, Container, useColorModeValue } from '@chakra-ui/react'
+import { Box, Container, Heading, useColorModeValue } from '@chakra-ui/react'
 
 const Works = () => {
     return (
@@ -12,6 +12,7 @@ const Works = () => {
             >
                 Hello, the Works Page will go here!
             </Box>
+            <Heading as="h3">Works</Heading>
         </Container>
     )
 }

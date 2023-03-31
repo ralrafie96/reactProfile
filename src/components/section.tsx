@@ -8,12 +8,14 @@ const StyledDiv = chakra(motion.div, {
 })
 
 interface SectionProps {
+    style?: any
     children: any
     delay: number
 }
-const Section = ({ children, delay = 0 }: SectionProps) => {
+const Section = ({ style, children, delay = 0 }: SectionProps) => {
     return (
     <StyledDiv className='styled-div'
+        style={style}
         animate={{ y: [10, 0], opacity: [0, 1] }}
         transition={{
             duration: '0.8',

@@ -12,7 +12,7 @@ import NotFound from './pages/404'
 import ScrollToTop from './components/scroll-to-top'
 import Contact from './pages/contact'
 
-function App() {
+const App= () => {
     return (
         <ChakraProvider theme={theme}>
             <Fonts />

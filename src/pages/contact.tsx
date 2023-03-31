@@ -7,10 +7,13 @@ import {
     FormHelperText,
     useColorModeValue,
     Input,
-    Button
+    Button,
+    Textarea
 } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
+import emailjs from '@emailjs/browser'
 import './contact.css'
+import Section from '../components/section'
 
 const Contact = () => {
 
@@ -20,13 +23,13 @@ const Contact = () => {
     const [fnMsg, setFnMsg] = useState('')
     const [lnMsg, setLnMsg] = useState('')
     const [emailMsg, setEmailMsg] = useState('')
+    const [subMsg, setSubMsg] = useState('')
     const [isDisabled, setIsDisabled] = useState(true)
     const emailValidation = new RegExp('^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$')
 
     useEffect(() => {
-        console.log('in useEffect')
         validateFields()
-      });
+    });
 
     const validateFn = () => {
         if (!fn.trim()) {
@@ -61,6 +64,20 @@ const Contact = () => {
             setIsDisabled(true)
         }
     }
+
+    const sendMail = (e: any) => {
+        e.preventDefault();
+        setSubMsg('Loading...')
+        emailjs.sendForm('service_d3wxu86', 'template_xe7om4e', e.target, '1b7P282VgZqmmrz7y')
+            .then((result) => {
+                console.log(result.text);
+                setSubMsg('Thanks for reaching out!')
+            }, (error) => {
+                console.log(error.text);
+                setSubMsg('An error occurred: ' + error.text)
+            });
+    };
+
     return (
         <Container className="page-container">
             <Box
@@ -72,63 +89,78 @@ const Contact = () => {
             >
                 Don&apos;t be shy, give it a try!
             </Box>
-            <form onSubmit={(e) => {console.log('submitted form!'); e.preventDefault()}}>
+            <form onSubmit={(e) => {setIsDisabled(true); sendMail(e)}}>
                 <FormControl>
-                    <Box
-                        className="full-name"
-                        whiteSpace={{ base: undefined, md: 'nowrap' }}
-                    >
+                    <Section style={{margin: '0rem'}} delay={0.2} >
                         <Box
-                            className="name"
-                            paddingRight={{ base: '0rem', md: '1rem' }}
-                            width={{ base: '100%', md: '50%' }}
+                            className="full-name"
+                            whiteSpace={{ base: undefined, md: 'nowrap' }}
                         >
-                            <FormLabel>First Name</FormLabel>
-                            <Input
-                                onChange={e => {
-                                    setFn(e.currentTarget.value)
-                                }}
-                                onBlur={() => {
-                                    validateFn()
-                                }}
+                            <Box
                                 className="name"
-                                type="first-name"
-                            />
-                            <FormHelperText className='helper-text'>{fnMsg}</FormHelperText>
-                        </Box>
-                        <Box
-                            className="name"
-                            paddingLeft={{ base: '0rem', md: '1rem' }}
-                            width={{ base: '100%', md: '50%' }}
-                        >
-                            <FormLabel>Last Name</FormLabel>
-                            <Input
-                                onChange={e => {
-                                    setLn(e.currentTarget.value)
-                                }}
-                                onBlur={() => {
-                                    validateLn()
-                                }}
+                                paddingRight={{ base: '0rem', md: '1rem' }}
+                                width={{ base: '100%', md: '50%' }}
+                            >
+                                <FormLabel>First Name</FormLabel>
+                                <Input
+                                    borderColor={useColorModeValue('gray.500', 'whiteAlpha.100')}
+                                    onChange={e => {
+                                        setFn(e.currentTarget.value)
+                                    }}
+                                    onBlur={() => {
+                                        validateFn()
+                                    }}
+                                    className="name"
+                                    type="first-name"
+                                    name="first-name"
+                                />
+                                <FormHelperText className='helper-text'>{fnMsg}</FormHelperText>
+                            </Box>
+                            <Box
                                 className="name"
-                                type="last-name"
-                            />
-                            <FormHelperText className='helper-text'>{lnMsg}</FormHelperText>
+                                paddingLeft={{ base: '0rem', md: '1rem' }}
+                                width={{ base: '100%', md: '50%' }}
+                            >
+                                <FormLabel>Last Name</FormLabel>
+                                <Input
+                                    borderColor={useColorModeValue('gray.500', 'whiteAlpha.100')}
+                                    onChange={e => {
+                                        setLn(e.currentTarget.value)
+                                    }}
+                                    onBlur={() => {
+                                        validateLn()
+                                    }}
+                                    className="name"
+                                    type="last-name"
+                                    name="last-name"
+                                />
+                                <FormHelperText className='helper-text'>{lnMsg}</FormHelperText>
+                            </Box>
                         </Box>
-                    </Box>
-                    <FormLabel>Email address</FormLabel>
-                    <Input
-                        type="email"
-                        onChange={e => {
-                            setEmail(e.currentTarget.value)
-                        }}
-                        onBlur={() => {
-                            validateEmail()
-                        }}
-                    />
-                    <FormHelperText className='helper-text'>{emailMsg}</FormHelperText>
-                    <Button isDisabled={isDisabled} type="submit" colorScheme="teal">
-                        Submit
-                    </Button>
+                    </Section>
+                    <Section style={{margin: '0rem'}} delay={0.4} >
+                        <FormLabel>Email address</FormLabel>
+                        <Input
+                            type="email"
+                            name="email"
+                            onChange={e => {
+                                setEmail(e.currentTarget.value)
+                            }}
+                            onBlur={() => {
+                                validateEmail()
+                            }}
+                            borderColor={useColorModeValue('gray.500', 'whiteAlpha.100')}
+                        />
+                        <FormHelperText className='helper-text'>{emailMsg}</FormHelperText>
+                    </Section>
+                    <Section style={{margin: '0rem'}} delay={0.6}>
+                        <FormLabel>Leave a message</FormLabel>
+                        <Textarea name="message" borderColor={useColorModeValue('gray.500', 'whiteAlpha.100')}/>
+                        <Button className="sub-btn" isDisabled={isDisabled} type="submit" colorScheme="teal">
+                            Submit
+                        </Button>
+                        <FormHelperText className='helper-text submit-helper-text'>{subMsg}</FormHelperText>
+                    </Section>
                 </FormControl>
             </form>
         </Container>

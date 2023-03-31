@@ -2,7 +2,20 @@ import { IconButton, useColorMode, useColorModeValue } from '@chakra-ui/react'
 import { SunIcon, MoonIcon } from '@chakra-ui/icons'
 
 const ThemeToggleBtn = () => {
-    const { toggleColorMode } = useColorMode()
+    const { colorMode, toggleColorMode } = useColorMode()
+    const faviconUpdate = () => {
+        console.log('in here...')
+        const favicon = document.getElementById("favicon");
+        if (favicon instanceof HTMLLinkElement && !!favicon.href) {
+            console.log(colorMode)
+            if (colorMode === 'light') {
+                favicon.href = 'duck_with_knife.png'
+            } else {
+                favicon.href = 'duck_with_knife-dark.png'
+            }
+        }
+    }
+    faviconUpdate()
 
     return (
         <IconButton

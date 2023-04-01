@@ -1,20 +1,32 @@
-import { Box, Container, Divider, Heading, useColorModeValue } from '@chakra-ui/react'
+import {
+    Box,
+    Container,
+    Divider,
+    Heading,
+    useColorModeValue
+} from '@chakra-ui/react'
 import ScrollContainer from 'react-indiana-drag-scroll'
+import Layout from '../components/article'
 import PhotoCard from '../components/photo-card'
 import Section from '../components/section'
 import './gallery.css'
 
 interface GalleryItemProps {
-    src: string,
+    src: string
     delay: number
 }
 
 const GalleryItem = ({ src, delay }: GalleryItemProps) => {
-    let width = 10;
+    let width = 10
     let height = (10 * 7) / 5
     return (
         <Section delay={delay}>
-            <PhotoCard className="gallery-item" src={src} height={height} width={width} />
+            <PhotoCard
+                className="gallery-item"
+                src={src}
+                height={height}
+                width={width}
+            />
         </Section>
     )
 }
@@ -22,7 +34,7 @@ const GalleryItem = ({ src, delay }: GalleryItemProps) => {
 interface GalleryRowProps {
     imgLst: string[]
 }
-const GalleryRow = ({imgLst}: GalleryRowProps) => {
+const GalleryRow = ({ imgLst }: GalleryRowProps) => {
     const rows: JSX.Element[] = []
     let delayLst: number[] = []
     for (let i = 0; i < 1; i += 1 / (imgLst.length - 1)) {
@@ -34,15 +46,13 @@ const GalleryRow = ({imgLst}: GalleryRowProps) => {
         let delay: number = delayLst[delayIndex]
         delayLst.splice(delayIndex, 1)
         rows.push(
-            <Box className='gi-container' key={src}>
+            <Box className="gi-container" key={src}>
                 <GalleryItem src={src} delay={delay} />
             </Box>
         )
     }
 
-    return (
-        <Box className="row-container">{rows}</Box>
-    )
+    return <Box className="row-container">{rows}</Box>
 }
 
 const Gallery = () => {
@@ -69,26 +79,33 @@ const Gallery = () => {
         'gallery17.jpg'
     ]
     return (
-        <Container className="gallery-container">
-            <Box
-                className="title-card"
-                borderRadius="lg"
-                bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.100')}
-                p={3}
-                mb={6}
-            >
-                Hello, the Gallery Page will go here!
-            </Box>
-            <Heading variant="section-title">Portraits</Heading>
-            <ScrollContainer className="gr-container">
-                <GalleryRow imgLst={imgLst1}/>
-            </ScrollContainer>
-            <Divider borderColor={useColorModeValue('gray.800', 'whiteAlpha.500')}/>
-            <Heading variant="section-title">Europe</Heading>
-            <ScrollContainer className="gr-container">
-                <GalleryRow imgLst={imgLst2}/>
-            </ScrollContainer>
-        </Container>
+        <Layout>
+            <Container className="gallery-container">
+                <Box
+                    className="title-card"
+                    borderRadius="lg"
+                    bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.100')}
+                    p={3}
+                    mb={6}
+                >
+                    Hello, the Gallery Page will go here!
+                </Box>
+                <Heading variant="section-title">Portraits</Heading>
+                <ScrollContainer className="gr-container">
+                    <GalleryRow imgLst={imgLst1} />
+                </ScrollContainer>
+                <Divider
+                    borderColor={useColorModeValue(
+                        'gray.800',
+                        'whiteAlpha.500'
+                    )}
+                />
+                <Heading variant="section-title">Europe</Heading>
+                <ScrollContainer className="gr-container">
+                    <GalleryRow imgLst={imgLst2} />
+                </ScrollContainer>
+            </Container>
+        </Layout>
     )
 }
 

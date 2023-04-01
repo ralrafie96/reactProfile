@@ -10,7 +10,7 @@ const StyledDiv = chakra(motion.div, {
 interface SectionProps {
     style?: any
     children: any
-    delay: number
+    delay?: number
 }
 const Section = ({ style, children, delay = 0 }: SectionProps) => {
     return (

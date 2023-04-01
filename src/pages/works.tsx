@@ -1,4 +1,6 @@
-import { Box, Container, Heading, useColorModeValue } from '@chakra-ui/react'
+import { Box, Container, Heading, SimpleGrid, useColorModeValue } from '@chakra-ui/react'
+import { WorkGridItem } from '../components/grid-item'
+import Section from '../components/section'
 
 const Works = () => {
     return (
@@ -12,7 +14,19 @@ const Works = () => {
             >
                 Hello, the Works Page will go here!
             </Box>
-            <Heading as="h3">Works</Heading>
+            <Heading as="h3" mb={4}>Works</Heading>
+            <SimpleGrid columns={[1,1,2]} gap={6}>
+                <Section>
+                    <WorkGridItem id='Cummins-OBD' title="Cummins OBD" thumbnail='cummins2.jpg'>
+                        A Cert-Doc Desktop Application developed using Python
+                    </WorkGridItem>
+                </Section>
+                <Section delay={0.2}>
+                    <WorkGridItem id='Cummins-GDC' title="Cummins GDC" thumbnail='cummins1.jpg'>
+                        Cummins GDC
+                    </WorkGridItem>
+                </Section>
+            </SimpleGrid>
         </Container>
     )
 }

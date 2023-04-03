@@ -8,8 +8,16 @@ import {
     useColorModeValue,
     Input,
     Button,
-    Textarea
+    Textarea,
+    Icon,
+    Link
 } from '@chakra-ui/react'
+import {
+    IoLogoDiscord,
+    IoLogoLinkedin,
+    IoLogoFacebook,
+    IoLogoGithub
+} from 'react-icons/io5'
 import { useEffect, useState } from 'react'
 import emailjs from '@emailjs/browser'
 import './contact.css'
@@ -122,7 +130,7 @@ const Contact = () => {
                             >
                                 <Box
                                     className="name"
-                                    paddingRight={{ base: '0rem', md: '1rem' }}
+                                    paddingRight={{ base: '1rem', md: '1rem' }}
                                     width={{ base: '100%', md: '50%' }}
                                 >
                                     <FormLabel>First Name</FormLabel>
@@ -147,7 +155,7 @@ const Contact = () => {
                                 </Box>
                                 <Box
                                     className="name"
-                                    paddingLeft={{ base: '0rem', md: '1rem' }}
+                                    paddingLeft={{ base: '1rem', md: '1rem' }}
                                     width={{ base: '100%', md: '50%' }}
                                 >
                                     <FormLabel>Last Name</FormLabel>
@@ -214,6 +222,27 @@ const Contact = () => {
                             </FormHelperText>
                         </Section>
                     </FormControl>
+                    <Section delay={1.0}>
+                        <Box className="footer">
+                            <Box className="link-container">
+                                <Link href='https://www.discordapp.com/users/297024927561678848'>
+                                    <Icon as={IoLogoDiscord} color="teal" fontSize='1.5rem' />
+                                </Link>
+                                &nbsp;
+                                <Link href='https://www.linkedin.com/in/rami-al-rafie-b55b4114a/'>
+                                    <Icon as={IoLogoLinkedin} color="teal" fontSize='1.5rem' />
+                                </Link>
+                                &nbsp;
+                                <Link href='https://www.facebook.com/ralrafie/'>
+                                    <Icon as={IoLogoFacebook} color="teal" fontSize='1.5rem' />
+                                </Link>
+                                &nbsp;
+                                <Link href='https://github.com/ralrafie96'>
+                                    <Icon as={IoLogoGithub} color="teal" fontSize='1.5rem' />
+                                </Link>
+                            </Box>
+                        </Box>
+                    </Section>
                 </form>
             </Container>
         </Layout>

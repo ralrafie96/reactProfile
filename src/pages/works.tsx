@@ -2,6 +2,7 @@ import {
     Box,
     Container,
     Heading,
+    Link,
     SimpleGrid,
     useColorModeValue
 } from '@chakra-ui/react'
@@ -13,15 +14,6 @@ const Works = () => {
     return (
         <Layout>
             <Container className="page-container">
-                <Box
-                    className="title-card"
-                    borderRadius="lg"
-                    bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.100')}
-                    p={3}
-                    mb={6}
-                >
-                    Hello, the Works Page will go here!
-                </Box>
                 <Heading as="h3" mb={4}>
                     Works
                 </Heading>
@@ -42,12 +34,12 @@ const Works = () => {
                             title="Cummins GDC"
                             thumbnail="cummins1.jpg"
                         >
-                            Front-end development on projects using React
+                            Front-end development on GDC Projects using React
                         </WorkGridItem>
                     </Section>
                     <Section delay={0.4}>
                         <WorkGridItem
-                            id="MSP_430_Oscilloscope"
+                            id="MCU_Oscilloscope"
                             title="MCU Oscilloscope"
                             thumbnail="msp430.jpg"
                         >
@@ -66,6 +58,17 @@ const Works = () => {
                         </WorkGridItem>
                     </Section>
                 </SimpleGrid>
+                <Section delay={1.0}>
+                    <Box
+                        className="title-card"
+                        borderRadius="lg"
+                        bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.100')}
+                        p={3}
+                        mb={6}
+                    >
+                        You can access the repository for this site <Link href='https://github.com/ralrafie96/reactProfile'>here.</Link>
+                    </Box>
+                </Section>
             </Container>
         </Layout>
     )

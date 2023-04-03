@@ -32,3 +32,13 @@
     justify-content: center;
     /* text-align: center; */
 }
+
+.footer {
+    /* position: absolute; */
+    width: 100%;
+}
+
+.link-container {
+    display: flex;
+    justify-content: center;
+}

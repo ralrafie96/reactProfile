@@ -43,7 +43,7 @@ const Page = () => {
                         <Heading as="h2" variant="page-title">
                             Rami Al-Rafie
                         </Heading>
-                        <p>Digital Idiot ( Developer / Designer )</p>
+                        <p>Software Engineer ( Developer / Designer )</p>
                     </Box>
                     <Box
                         className="img"

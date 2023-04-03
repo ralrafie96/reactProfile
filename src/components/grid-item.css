@@ -1,6 +1,7 @@
 .grid-item-container {
     width: 100%;
     text-align: center;
+    cursor: pointer;
 }
 
 .link-box {

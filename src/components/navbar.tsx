@@ -78,9 +78,6 @@ const NavBar = () => {
                     <LinkItem href="/works" path={location.pathname}>
                         Works
                     </LinkItem>
-                    <LinkItem href="/posts" path={location.pathname}>
-                        Posts
-                    </LinkItem>
                     <LinkItem href="/gallery" path={location.pathname}>
                         Gallery
                     </LinkItem>
@@ -102,9 +99,6 @@ const NavBar = () => {
                                 </LinkItem>
                                 <LinkItem p={0} href='/works' path={location.pathname}>
                                     <MenuItem bg={location.pathname === '/works' ? 'glassTeal' : undefined}>Works</MenuItem>
-                                </LinkItem>
-                                <LinkItem p={0} href='/posts' path={location.pathname}>
-                                    <MenuItem bg={location.pathname === '/posts' ? 'glassTeal' : undefined}>Posts</MenuItem>
                                 </LinkItem>
                                 <LinkItem p={0} href='/gallery' path={location.pathname}>
                                     <MenuItem bg={location.pathname === '/gallery' ? 'glassTeal' : undefined}>Gallery</MenuItem>

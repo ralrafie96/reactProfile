@@ -24,12 +24,13 @@
 }
 
 .sub-btn {
-    margin-top: 1rem
+    margin-top: 1rem;
 }
 
 .submit-helper-text {
     display: flex;
     justify-content: center;
+    margin-bottom: 1rem;
     /* text-align: center; */
 }
 

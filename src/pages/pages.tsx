@@ -108,8 +108,8 @@ const Page = () => {
                     </div>
                     <div className="bio-section">
                         <p className="bio-year">2019</p>Contracted to Cummins to
-                        develop React and Angular web applications, and PyQt5
-                        desktop applications
+                        develop React and Angular web applications, as well as
+                        PyQt5 desktop applications
                     </div>
                     <div className="bio-section">
                         <p className="bio-year">Today</p>Continuing to upskill

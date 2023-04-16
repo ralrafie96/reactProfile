@@ -9,9 +9,9 @@ const ThemeToggleBtn = () => {
         if (favicon instanceof HTMLLinkElement && !!favicon.href) {
             console.log(colorMode)
             if (colorMode === 'light') {
-                favicon.href = 'duck_with_knife.png'
+                favicon.href = 'duck with knife.png'
             } else {
-                favicon.href = 'duck_with_knife-dark.png'
+                favicon.href = 'duck with knife dark.png'
             }
         }
     }

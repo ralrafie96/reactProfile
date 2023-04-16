@@ -16,14 +16,14 @@ import Layout from '../components/article'
 const Page = () => {
     const navigate = useNavigate()
     const imgList = [
-        'gallery1.jpg',
-        'gallery2.jpg',
-        'gallery3.jpg',
-        'gallery4.jpg',
-        'gallery5.jpg',
-        'gallery6.jpg',
-        'gallery7.jpg',
-        'gallery8.jpg'
+        'Portraits/gallery1.jpg',
+        'Portraits/gallery2.jpg',
+        'Portraits/gallery3.jpg',
+        'Portraits/gallery4.jpg',
+        'Portraits/gallery5.jpg',
+        'Portraits/gallery6.jpg',
+        'Portraits/gallery7.jpg',
+        'Portraits/gallery8.jpg'
     ]
     return (
         <Layout>
@@ -113,7 +113,7 @@ const Page = () => {
                     </div>
                     <div className="bio-section">
                         <p className="bio-year">Today</p>Continuing to upskill
-                        in different technologies, and improve on UX/UI design
+                        in different full-stack technologies, and improve on UX/UI design
                     </div>
                 </Section>
                 <Section delay={0.3}>

@@ -228,15 +228,12 @@ const Contact = () => {
                                 <Link href='https://www.discordapp.com/users/297024927561678848'>
                                     <Icon as={IoLogoDiscord} color="teal" fontSize='1.5rem' />
                                 </Link>
-                                &nbsp;
                                 <Link href='https://www.linkedin.com/in/rami-al-rafie-b55b4114a/'>
                                     <Icon as={IoLogoLinkedin} color="teal" fontSize='1.5rem' />
                                 </Link>
-                                &nbsp;
                                 <Link href='https://www.facebook.com/ralrafie/'>
                                     <Icon as={IoLogoFacebook} color="teal" fontSize='1.5rem' />
                                 </Link>
-                                &nbsp;
                                 <Link href='https://github.com/ralrafie96'>
                                     <Icon as={IoLogoGithub} color="teal" fontSize='1.5rem' />
                                 </Link>

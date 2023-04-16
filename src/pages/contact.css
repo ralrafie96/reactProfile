@@ -10,13 +10,9 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    /* white-space: nowrap; */
     width: 100%
 }
 
-/* .name {
-    display: inline-block;
-} */
 
 .helper-text {
     display: flex;
@@ -41,5 +37,7 @@
 
 .link-container {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content:space-between;
+
 }

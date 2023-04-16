@@ -9,8 +9,8 @@ interface PhotoCardProps {
 
 const PhotoCard = ({ className, src, width = 5, height = 7 }: PhotoCardProps) => {
     return (
-        <Box className={className} style={{width: `${width}rem`, height: `${height}rem`}}>
-            <Image src={src} className="card" alt={src} style={{width: `${width}rem`, height: `${height}rem`}} />
+        <Box className={className} style={{ width: `${width}rem`, height: `${height}rem` }}>
+            <Image src={src} className="card" alt={src} style={{ width: `${width}rem`, height: `${height}rem` }} />
         </Box>
     )
 }

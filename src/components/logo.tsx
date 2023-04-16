@@ -5,7 +5,7 @@ import './logo.css'
 
 const Logo = () => {
     const navigate = useNavigate()
-    const footPrintImg = `duck_with_knife${useColorModeValue('', '-dark')}.png`
+    const footPrintImg = `duck with knife${useColorModeValue('', ' dark')}.png`
 
     return (
         <div className="logo-box" onClick={() => navigate('/home')}>

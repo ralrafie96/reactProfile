@@ -3,7 +3,9 @@ import {
     Container,
     Divider,
     Heading,
-    useColorModeValue
+    Link,
+    useColorModeValue,
+    Text
 } from '@chakra-ui/react'
 import ScrollContainer from 'react-indiana-drag-scroll'
 import Layout from '../components/article'
@@ -14,11 +16,13 @@ import './gallery.css'
 interface GalleryItemProps {
     src: string
     delay: number
+    width: number
+    height: number
 }
 
-const GalleryItem = ({ src, delay }: GalleryItemProps) => {
-    let width = 10
-    let height = (10 * 7) / 5
+const GalleryItem = ({ src, delay, width, height }: GalleryItemProps) => {
+    // let width = 10
+    // let height = (10 * 7) / 5
     return (
         <Section delay={delay}>
             <PhotoCard
@@ -32,22 +36,28 @@ const GalleryItem = ({ src, delay }: GalleryItemProps) => {
 }
 
 interface GalleryRowProps {
-    imgLst: string[]
+    imgDict: { [key: string]: string; }
 }
-const GalleryRow = ({ imgLst }: GalleryRowProps) => {
+const GalleryRow = ({ imgDict }: GalleryRowProps) => {
     const rows: JSX.Element[] = []
     let delayLst: number[] = []
-    for (let i = 0; i < 1; i += 1 / (imgLst.length - 1)) {
+    for (let i = 0; i < 1; i += 1 / (Object.keys(imgDict).length - 1)) {
         delayLst.push(i)
     }
-    for (let i = 0; i <= imgLst.length - 1; i++) {
-        let src = imgLst[imgLst.length - i - 1]
-        let delayIndex: number = Math.floor(Math.random() * imgLst.length)
+    for (let src in imgDict) {
+        console.log(src)
+        // let src = imgDict[Object.keys(imgDict).length - i - 1]
+        let delayIndex: number = Math.floor(Math.random() * Object.keys(imgDict).length)
         let delay: number = delayLst[delayIndex]
         delayLst.splice(delayIndex, 1)
+        let width = 10
+        let height = 14
+        if (imgDict[src] == 'landscape') {
+            width = 19.6
+        }
         rows.push(
             <Box className="gi-container" key={src}>
-                <GalleryItem src={src} delay={delay} />
+                <GalleryItem src={src} delay={delay} width={width} height={height} />
             </Box>
         )
     }
@@ -56,28 +66,45 @@ const GalleryRow = ({ imgLst }: GalleryRowProps) => {
 }
 
 const Gallery = () => {
-    const imgLst1 = [
-        'gallery0.jpg',
-        'gallery1.jpg',
-        'gallery2.jpg',
-        'gallery3.jpg',
-        'gallery4.jpg',
-        'gallery5.jpg',
-        'gallery6.jpg',
-        'gallery7.jpg',
-        'gallery8.jpg'
-    ]
-    const imgLst2 = [
-        'gallery9.jpg',
-        'gallery10.jpg',
-        'gallery11.jpg',
-        'gallery12.jpg',
-        'gallery13.jpg',
-        'gallery14.jpg',
-        'gallery15.jpg',
-        'gallery16.jpg',
-        'gallery17.jpg'
-    ]
+    const imgDict1 = {
+        'Portraits/gallery0.jpg': 'portrait',
+        'Portraits/gallery1.jpg': 'portrait',
+        'Portraits/gallery2.jpg': 'portrait',
+        'Portraits/gallery3.jpg': 'portrait',
+        'Portraits/gallery4.jpg': 'portrait',
+        'Portraits/gallery5.jpg': 'portrait',
+        'Portraits/gallery6.jpg': 'portrait',
+        'Portraits/gallery7.jpg': 'portrait',
+        'Portraits/gallery8.jpg': 'portrait',
+        'Portraits/gallery9.jpg': 'portrait'
+    }
+    const imgDict2 = {
+        'Europe/gallery10.jpg': 'landscape',
+        'Europe/gallery11.jpg': 'portrait',
+        'Europe/gallery12.jpg': 'portrait',
+        'Europe/gallery13.jpg': 'landscape',
+        'Europe/gallery14.jpg': 'portrait',
+        'Europe/gallery15.jpg': 'portrait',
+        'Europe/gallery16.jpg': 'portrait',
+        'Europe/gallery17.jpg': 'landscape',
+        'Europe/gallery18.jpg': 'portrait',
+        'Europe/gallery19.jpg': 'portrait',
+        'Europe/gallery20.jpg': 'portrait',
+        'Europe/gallery21.jpg': 'portrait',
+    }
+    const imgDict3 = {
+        'Doha/doha1.jpg': 'portrait',
+        'Doha/doha2.jpg': 'portrait',
+        'Doha/doha3.jpg': 'landscape',
+        'Doha/doha4.jpg': 'landscape',
+        'Doha/doha5.jpg': 'portrait',
+        'Doha/doha6.jpg': 'portrait',
+        'Doha/doha7.jpg': 'portrait',
+        'Doha/doha8.jpg': 'portrait',
+        'Doha/doha9.jpg': 'portrait',
+        'Doha/doha10.jpg': 'portrait',
+        'Doha/doha11.jpg': 'portrait'
+    }
     return (
         <Layout>
             <Container className="gallery-container">
@@ -88,11 +115,11 @@ const Gallery = () => {
                     p={3}
                     mb={6}
                 >
-                    Hello, the Gallery Page will go here!
+                    A glimpse of the memories and people in my life!
                 </Box>
                 <Heading variant="section-title">Portraits</Heading>
                 <ScrollContainer className="gr-container">
-                    <GalleryRow imgLst={imgLst1} />
+                    <GalleryRow imgDict={imgDict1} />
                 </ScrollContainer>
                 <Divider
                     borderColor={useColorModeValue(
@@ -101,8 +128,20 @@ const Gallery = () => {
                     )}
                 />
                 <Heading variant="section-title">Europe</Heading>
+                <Text>Images curtosy of <Link href='https://www.facebook.com/00arifhussain'>Arif Hussain</Link></Text>
                 <ScrollContainer className="gr-container">
-                    <GalleryRow imgLst={imgLst2} />
+                    <GalleryRow imgDict={imgDict2} />
+                </ScrollContainer>
+                <Divider
+                    borderColor={useColorModeValue(
+                        'gray.800',
+                        'whiteAlpha.500'
+                    )}
+                />
+                <Heading variant="section-title">Doha</Heading>
+                <Text>Images curtosy of <Link href='https://www.shotsbysamir.com/'>Samir Al-Rafie</Link></Text>
+                <ScrollContainer className="gr-container">
+                    <GalleryRow imgDict={imgDict3} />
                 </ScrollContainer>
             </Container>
         </Layout>

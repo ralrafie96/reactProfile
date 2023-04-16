@@ -128,7 +128,7 @@ const Gallery = () => {
                     )}
                 />
                 <Heading variant="section-title">Europe</Heading>
-                <Text>Images curtosy of <Link href='https://www.facebook.com/00arifhussain'>Arif Hussain</Link></Text>
+                <Text>Images courtesy of <Link href='https://www.facebook.com/00arifhussain'>Arif Hussain</Link></Text>
                 <ScrollContainer className="gr-container">
                     <GalleryRow imgDict={imgDict2} />
                 </ScrollContainer>
@@ -139,7 +139,7 @@ const Gallery = () => {
                     )}
                 />
                 <Heading variant="section-title">Doha</Heading>
-                <Text>Images curtosy of <Link href='https://www.shotsbysamir.com/'>Samir Al-Rafie</Link></Text>
+                <Text>Images courtesy of <Link href='https://www.shotsbysamir.com/'>Samir Al-Rafie</Link></Text>
                 <ScrollContainer className="gr-container">
                     <GalleryRow imgDict={imgDict3} />
                 </ScrollContainer>

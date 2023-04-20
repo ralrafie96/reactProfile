@@ -85,12 +85,15 @@ const Contact = () => {
     const sendMail = (e: any) => {
         e.preventDefault()
         setSubMsg('Loading...')
+        const emailPublicKey: string = process.env.REACT_APP_PUBLIC_KEY
+        const emailTemplateId: string = process.env.REACT_APP_TEMPLATE_ID
+        const emailServiceId: string = process.env.REACT_APP_SERVICE_ID
         emailjs
             .sendForm(
-                'service_d3wxu86',
-                'template_xe7om4e',
+                emailServiceId,
+                emailTemplateId,
                 e.target,
-                '1b7P282VgZqmmrz7y'
+                emailPublicKey
             )
             .then(
                 result => {

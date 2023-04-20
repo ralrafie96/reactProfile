@@ -4,10 +4,8 @@ import { SunIcon, MoonIcon } from '@chakra-ui/icons'
 const ThemeToggleBtn = () => {
     const { colorMode, toggleColorMode } = useColorMode()
     const faviconUpdate = () => {
-        console.log('in here...')
         const favicon = document.getElementById("favicon");
         if (favicon instanceof HTMLLinkElement && !!favicon.href) {
-            console.log(colorMode)
             if (colorMode === 'light') {
                 favicon.href = 'duck with knife.png'
             } else {

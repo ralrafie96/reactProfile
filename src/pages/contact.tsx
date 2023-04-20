@@ -18,6 +18,7 @@ import {
     IoLogoFacebook,
     IoLogoGithub
 } from 'react-icons/io5'
+import CryptoJS from "crypto-js";
 import { useEffect, useState } from 'react'
 import emailjs from '@emailjs/browser'
 import './contact.css'
@@ -82,12 +83,36 @@ const Contact = () => {
         }
     }
 
+    const encryptData = (text: string) => {
+        const data = CryptoJS.AES.encrypt(
+            JSON.stringify(text),
+            process.env.REACT_APP_SECRET_PASS
+        ).toString();
+
+        return data;
+    };
+
+    const decryptData = (text: string) => {
+        const bytes = CryptoJS.AES.decrypt(text, process.env.REACT_APP_SECRET_PASS);
+        const data = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+        return data;
+    };
+
     const sendMail = (e: any) => {
         e.preventDefault()
         setSubMsg('Loading...')
         const emailPublicKey: string = process.env.REACT_APP_PUBLIC_KEY
         const emailTemplateId: string = process.env.REACT_APP_TEMPLATE_ID
         const emailServiceId: string = process.env.REACT_APP_SERVICE_ID
+
+        let formSubmissions = sessionStorage.getItem('formSubmissions')
+        if (!!formSubmissions) {
+            if (parseInt(decryptData(formSubmissions)) >= 3) {
+                setSubMsg('Please do not send multiple emails. Thank you! :D')
+                return
+            }
+        }
+
         emailjs
             .sendForm(
                 emailServiceId,
@@ -96,12 +121,15 @@ const Contact = () => {
                 emailPublicKey
             )
             .then(
-                result => {
-                    console.log(result.text)
+                () => {
                     setSubMsg('Thanks for reaching out!')
+                    if (!!formSubmissions) {
+                        sessionStorage.setItem('formSubmissions', encryptData(`${parseInt(decryptData(formSubmissions)) + 1}`))
+                    } else {
+                        sessionStorage.setItem('formSubmissions', encryptData(`1`))
+                    }
                 },
                 error => {
-                    console.log(error.text)
                     setSubMsg('An error occurred: ' + error.text)
                 }
             )

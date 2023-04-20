@@ -45,7 +45,6 @@ const GalleryRow = ({ imgDict }: GalleryRowProps) => {
         delayLst.push(i)
     }
     for (let src in imgDict) {
-        console.log(src)
         // let src = imgDict[Object.keys(imgDict).length - i - 1]
         let delayIndex: number = Math.floor(Math.random() * Object.keys(imgDict).length)
         let delay: number = delayLst[delayIndex]

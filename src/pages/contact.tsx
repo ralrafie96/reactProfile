@@ -107,8 +107,18 @@ const Contact = () => {
 
         let formSubmissions = sessionStorage.getItem('formSubmissions')
         if (!!formSubmissions) {
-            if (parseInt(decryptData(formSubmissions)) >= 3) {
-                setSubMsg('Please do not send multiple emails. Thank you! :D')
+            try {
+                if (formSubmissions === "") {
+                    throw new Error("sendMail: formSubmissions was found to be an empty.")
+                }
+                if (parseInt(decryptData(formSubmissions)) >= 3) {
+                    setSubMsg('Please do not send multiple emails. Thank you! :D')
+                    return
+                }
+            } catch (err) {
+                console.log(err)
+                sessionStorage.setItem('formSubmissions', encryptData(`3`))
+                setSubMsg('Please do not mess with the session storage. Thank you! :D')
                 return
             }
         }

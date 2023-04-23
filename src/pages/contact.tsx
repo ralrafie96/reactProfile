@@ -19,7 +19,7 @@ import {
     IoLogoGithub
 } from 'react-icons/io5'
 import CryptoJS from "crypto-js";
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import emailjs from '@emailjs/browser'
 import './contact.css'
 import Section from '../components/section'
@@ -37,10 +37,33 @@ const Contact = () => {
     const emailValidation = new RegExp(
         '^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$'
     )
+    const [formSubSet, setFormSubSet] = useState(false)
+
+    const validateFields = useCallback(() => {
+        if (
+            fnMsg === '' &&
+            lnMsg === '' &&
+            emailMsg === '' &&
+            fn !== '' &&
+            ln !== '' &&
+            email !== ''
+        ) {
+            setIsDisabled(false)
+        } else {
+            setIsDisabled(true)
+        }
+    }, [fnMsg, lnMsg, emailMsg, fn, ln, email])
 
     useEffect(() => {
+        if (!!!sessionStorage.getItem('formSubmissions') && !!!formSubSet) {
+            console.log('reset formSubmissions...')
+            setFormSubSet(true)
+            sessionStorage.setItem('formSubmissions', encryptData('0'))
+        } else if (!!!sessionStorage.getItem('formSubmissions') && !!formSubSet) {
+            sessionStorage.setItem('formSubmissions', encryptData('3'))
+        }
         validateFields()
-    })
+    }, [validateFields, formSubSet])
 
     const validateFn = () => {
         if (!fn.trim()) {
@@ -65,21 +88,6 @@ const Contact = () => {
             setEmailMsg('Please enter a valid Email Address.')
         } else {
             setEmailMsg('')
-        }
-    }
-
-    const validateFields = () => {
-        if (
-            fnMsg === '' &&
-            lnMsg === '' &&
-            emailMsg === '' &&
-            fn !== '' &&
-            ln !== '' &&
-            email !== ''
-        ) {
-            setIsDisabled(false)
-        } else {
-            setIsDisabled(true)
         }
     }
 

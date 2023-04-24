@@ -1,4 +1,9 @@
-duck-model {
+.duck-model {
     margin: auto;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1 / 1;
+    width: 100%
 }

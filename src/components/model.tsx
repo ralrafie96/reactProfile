@@ -7,9 +7,9 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 //     options: any
 // }
 
-export const loadGLTFModel = (scene: THREE.Scene, glbPath: string, options: any={ receiveShadow: true, castShadow: true }) => {
-    
-    console.log('in loadGLTFModel')
+export const loadGLTFModel = (scene: THREE.Scene, glbPath: string, options: any = { receiveShadow: true, castShadow: true }) => {
+
+    // console.log('in loadGLTFModel')
     const { receiveShadow, castShadow } = options
     return new Promise((resolve, reject) => {
         const loader = new GLTFLoader()

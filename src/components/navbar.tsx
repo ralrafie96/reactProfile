@@ -10,10 +10,10 @@ import {
     MenuItem,
     MenuList,
     MenuButton,
-    IconButton,
+    // IconButton,
     useColorModeValue
 } from '@chakra-ui/react'
-import { HamburgerIcon } from '@chakra-ui/icons'
+// import { HamburgerIcon } from '@chakra-ui/icons'
 import React from 'react'
 import { Link as ReactRouterLink, useLocation } from 'react-router-dom'
 import './navbar.css'
@@ -90,8 +90,8 @@ const NavBar = () => {
                     <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
                         <Menu>
                             <MenuButton
-                                as={IconButton}
-                                icon={<HamburgerIcon />}
+                            // as={IconButton}
+                            // icon={<HamburgerIcon />}
                             ></MenuButton>
                             <MenuList>
                                 <LinkItem p={0} href='/home' path={location.pathname}>

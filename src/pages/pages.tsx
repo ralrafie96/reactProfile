@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import {
     Container,
     Box,
@@ -13,6 +13,7 @@ import { ChevronRightIcon } from '@chakra-ui/icons'
 import { useNavigate } from 'react-router-dom'
 import PhotoGroup from '../components/photo-group'
 import Layout from '../components/article'
+import DuckModel from '../components/duck-model'
 const Page = () => {
     const navigate = useNavigate()
     const imgList = [
@@ -28,6 +29,9 @@ const Page = () => {
     return (
         <Layout>
             <Container className="page-container">
+                <Suspense fallback={null}>
+                    <DuckModel />
+                </Suspense>
                 <Box
                     className="title-card"
                     borderRadius="lg"

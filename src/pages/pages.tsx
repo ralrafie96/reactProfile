@@ -7,7 +7,6 @@ import {
     useColorModeValue,
     Button
 } from '@chakra-ui/react'
-import NoSSR from 'react-no-ssr';
 import './pages.css'
 import Section from '../components/section'
 import { ChevronRightIcon } from '@chakra-ui/icons'
@@ -30,9 +29,7 @@ const Page = () => {
     return (
         <Layout>
             <Container className="page-container">
-                <NoSSR>
-                    <DuckModel />
-                </NoSSR>
+                <DuckModel />
                 <Box
                     className="title-card"
                     borderRadius="lg"

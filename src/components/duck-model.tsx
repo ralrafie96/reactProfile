@@ -40,7 +40,7 @@ const DuckModel = () => {
             //     1 * Math.cos(0.2 * Math.PI)
             // )
             const initialCameraPosition = new THREE.Vector3(
-                1, 0.5, 0.5
+                0.8, 0.4, 0.4
             )
             const camera = new THREE.PerspectiveCamera(50, canvasContainer.clientWidth / canvasContainer.clientHeight, 0.1, 1000)
             // camera.position.setZ(2)

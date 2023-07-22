@@ -11,7 +11,6 @@ import {
     MenuList,
     MenuButton,
     IconButton,
-    // Button,
     useColorModeValue
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
@@ -90,7 +89,6 @@ const NavBar = () => {
                     <ThemeToggleBtn />
                     <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
                         <Menu>
-                        {/* <MenuButton as={IconButton} icon={<HamburgerIcon />}></MenuButton> */}
                             <MenuButton as={IconButton} icon={<HamburgerIcon />} ></MenuButton>
                             <MenuList>
                                 <LinkItem p={0} href='/home' path={location.pathname}>

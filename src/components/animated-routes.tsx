@@ -9,6 +9,7 @@ import CumminsOBD from '../pages/works/cummins-obd'
 import CumminsGDC from '../pages/works/cummins-gdc'
 import SeniorDesign from '../pages/works/senior-design'
 import MCUOscilloscope from '../pages/works/mcu-oscilloscope'
+import CumminsPcrs from '../pages/works/cummins-pcrs'
 // import WorksPages from '../pages/works/works-pages'
 
 const AnimatedRoutes = () => {
@@ -29,6 +30,7 @@ const AnimatedRoutes = () => {
                 <Route path="/Cummins_GDC" element={<CumminsGDC />} />
                 <Route path="/Senior_Design" element={<SeniorDesign />} />
                 <Route path="/MCU_Oscilloscope" element={<MCUOscilloscope />} />
+                <Route path="/Cummins_PCRS" element={<CumminsPcrs />} />
             </Routes>
         </AnimatePresence>
     )

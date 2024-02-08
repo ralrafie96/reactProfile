@@ -11,7 +11,7 @@ const CumminsPcrs = () => {
             <Container className="co-container">
                 <Title>Cummins PCRS <Badge>2023</Badge>
                 </Title>
-                <WorkImage src="Cummins3.jpg" alt="tricycle"></WorkImage>
+                <WorkImage src="cummins3.jpg" alt="Cummins3"></WorkImage>
                 <p>
                     A tool that queries volume and payment data to create reports
                 </p>

@@ -4,6 +4,7 @@ import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { loadGLTFModel } from './model'
 import './duck-model.css'
+// import modelUrl from '../img/scene.gltf'
 
 const easeOutCircle = (x: number) => {
     return Math.sqrt(1 - Math.pow(x - 1, 4))
@@ -60,7 +61,7 @@ const DuckModel = () => {
             const ambientLight = new THREE.AmbientLight(0xcccccc, 1)
             scene.add(ambientLight)
 
-            loadGLTFModel(scene, './duck_small.glb', {
+            loadGLTFModel(scene, '/duck_small.glb', {
                 receiveShadow: true,
                 castShadow: true
             }).then(() => {

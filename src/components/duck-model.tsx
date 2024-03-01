@@ -60,7 +60,7 @@ const DuckModel = () => {
             const ambientLight = new THREE.AmbientLight(0xcccccc, 1)
             scene.add(ambientLight)
 
-            loadGLTFModel(scene, 'duck_small.glb', {
+            loadGLTFModel(scene, './duck_small.glb', {
                 receiveShadow: true,
                 castShadow: true
             }).then(() => {

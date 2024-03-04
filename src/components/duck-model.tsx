@@ -57,10 +57,15 @@ const DuckModel = () => {
             rndr.outputEncoding = THREE.sRGBEncoding
             refRenderer.current = rndr
 
-            const ambientLight = new THREE.AmbientLight(0xcccccc, 1)
-            scene.add(ambientLight)
+            const directionalLight1 = new THREE.DirectionalLight(0xcccccc, 1)
+            directionalLight1.position.set( 0, 10, 0 );
+            scene.add(directionalLight1)
 
-            loadGLTFModel(scene, '\\duck_small.glb', {
+            const directionalLight2 = new THREE.DirectionalLight(0xcccccc, 1)
+            directionalLight2.position.set( 0, -10, 0 );
+            scene.add(directionalLight2)
+
+            loadGLTFModel(scene, '/duck_small.glb', {
                 receiveShadow: true,
                 castShadow: true
             }).then(() => {

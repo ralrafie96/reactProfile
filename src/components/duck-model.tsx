@@ -47,6 +47,10 @@ const DuckModel = () => {
             camera.position.copy(initialCameraPosition)
             camera.rotation.set(10, 10, 0)
             // camera.lookAt(target)
+
+            const directionalLight1 = new THREE.DirectionalLight(0xcccccc, 1)
+            scene.add(directionalLight1)
+
             const rndr = new THREE.WebGLRenderer({
                 canvas,
                 antialias: true,
@@ -56,14 +60,6 @@ const DuckModel = () => {
             rndr.setSize(canvasContainer.clientWidth, canvasContainer.clientHeight)
             rndr.outputEncoding = THREE.sRGBEncoding
             refRenderer.current = rndr
-
-            const directionalLight1 = new THREE.DirectionalLight(0xcccccc, 1)
-            directionalLight1.position.set( 0, 10, 0 );
-            scene.add(directionalLight1)
-
-            const directionalLight2 = new THREE.DirectionalLight(0xcccccc, 1)
-            directionalLight2.position.set( 0, -10, 0 );
-            scene.add(directionalLight2)
 
             loadGLTFModel(scene, '/duck_small.glb', {
                 receiveShadow: true,
@@ -97,6 +93,9 @@ const DuckModel = () => {
                 } else {
                     controls.update()
                 }
+
+                directionalLight1.position.set(camera.position.x, camera.position.y, camera.position.z);
+
                 rndr.render(scene, camera)
                 window.requestAnimationFrame(animate)
             }

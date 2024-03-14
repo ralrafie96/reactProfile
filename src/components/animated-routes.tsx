@@ -10,6 +10,7 @@ import CumminsGDC from '../pages/works/cummins-gdc'
 import SeniorDesign from '../pages/works/senior-design'
 import MCUOscilloscope from '../pages/works/mcu-oscilloscope'
 import CumminsPcrs from '../pages/works/cummins-pcrs'
+import { Game } from '../pages/game'
 // import WorksPages from '../pages/works/works-pages'
 
 const AnimatedRoutes = () => {
@@ -25,6 +26,7 @@ const AnimatedRoutes = () => {
                 <Route path="/works" element={<Works />}>
                     {/* <Route path="/works/:id" element={<WorksPages />} /> */}
                 </Route>
+                <Route path="/game" element={<Game />}></Route>
                 <Route path="/contact" element={<Contact />}></Route>
                 <Route path='/Cummins_OBD' element={<CumminsOBD />} />
                 <Route path="/Cummins_GDC" element={<CumminsGDC />} />

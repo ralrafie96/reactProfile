@@ -17,5 +17,39 @@
 }
 
 .hidden {
-    display: none;
+    transform: scale(0);
+    height: 0;
+}
+
+.text-overlay {
+    position: absolute;
+    text-align: left;
+    margin-left: 1rem;
+}
+
+.game-input {
+    color: transparent;
+}
+
+.modal-bg {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 10, 10, 0.3);
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 15rem;
+}
+
+.float-in {
+    transform: translateY(1rem);
+    color: transparent;
 }

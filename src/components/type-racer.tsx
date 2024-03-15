@@ -2,6 +2,7 @@ import { Input } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import './type-racer.css'
 
+
 export const TypeRacer = () => {
     const sample = "Hello there my name is Rami."
     const [sampleHtml, setSampleHtml] = useState<any>()

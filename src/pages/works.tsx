@@ -20,6 +20,15 @@ const Works = () => {
                 <SimpleGrid columns={[1, 1, 2]} gap={6}>
                     <Section>
                         <WorkGridItem
+                            id="Chatter"
+                            title="Chatter"
+                            thumbnail="mernProject.png"
+                        >
+                            A web app for chatting with other developers
+                        </WorkGridItem>
+                    </Section>
+                    <Section delay={0.2}>
+                        <WorkGridItem
                             id="Cummins_PCRS"
                             title="Cummins PCRS"
                             thumbnail="cummins3.jpg"
@@ -27,7 +36,7 @@ const Works = () => {
                             A tool that queries volume and payment data to create reports
                         </WorkGridItem>
                     </Section>
-                    <Section delay={0.2}>
+                    <Section delay={0.4}>
                         <WorkGridItem
                             id="Cummins_OBD"
                             title="Cummins OBD"
@@ -37,7 +46,7 @@ const Works = () => {
                             Python
                         </WorkGridItem>
                     </Section>
-                    <Section delay={0.4}>
+                    <Section delay={0.6}>
                         <WorkGridItem
                             id="Cummins_GDC"
                             title="Cummins GDC"
@@ -46,7 +55,7 @@ const Works = () => {
                             Front-end development on GDC Projects using React
                         </WorkGridItem>
                     </Section>
-                    <Section delay={0.6}>
+                    <Section delay={0.8}>
                         <WorkGridItem
                             id="MCU_Oscilloscope"
                             title="MCU Oscilloscope"
@@ -56,7 +65,7 @@ const Works = () => {
                             varying signal
                         </WorkGridItem>
                     </Section>
-                    <Section delay={0.8}>
+                    <Section delay={1.0}>
                         <WorkGridItem
                             id="Senior_Design"
                             title="Senior Design Project"
@@ -67,7 +76,7 @@ const Works = () => {
                         </WorkGridItem>
                     </Section>
                 </SimpleGrid>
-                <Section delay={1.2}>
+                <Section delay={1.4}>
                     <Box
                         className="title-card"
                         borderRadius="lg"

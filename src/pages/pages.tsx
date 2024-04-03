@@ -11,21 +11,20 @@ import './pages.css'
 import Section from '../components/section'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import { useNavigate } from 'react-router-dom'
-import PhotoGroup from '../components/photo-group'
 import Layout from '../components/article'
 import DuckModel from '../components/duck-model'
 const Page = () => {
     const navigate = useNavigate()
-    const imgList = [
-        'Portraits/gallery1.jpg',
-        'Portraits/gallery2.jpg',
-        'Portraits/gallery3.jpg',
-        'Portraits/gallery4.jpg',
-        'Portraits/gallery5.jpg',
-        'Portraits/gallery6.jpg',
-        'Portraits/gallery7.jpg',
-        'Portraits/gallery8.jpg'
-    ]
+    // const imgList = [
+    //     'Portraits/gallery1.jpg',
+    //     'Portraits/gallery2.jpg',
+    //     'Portraits/gallery3.jpg',
+    //     'Portraits/gallery4.jpg',
+    //     'Portraits/gallery5.jpg',
+    //     'Portraits/gallery6.jpg',
+    //     'Portraits/gallery7.jpg',
+    //     'Portraits/gallery8.jpg'
+    // ]
     return (
         <Layout>
             <Container className="page-container">
@@ -45,7 +44,7 @@ const Page = () => {
                         <Heading as="h2" variant="page-title">
                             Rami Al-Rafie
                         </Heading>
-                        <p>Software Engineer ( Developer / Designer )</p>
+                        <p>Software Engineer / Full-Stack Developer</p>
                     </Box>
                     <Box
                         className="img"
@@ -126,14 +125,14 @@ const Page = () => {
                         Art, Music, Volleyball, Video Games, Web Design
                     </p>
                 </Section>
-                <Section delay={0.4}>
+                {/* <Section delay={0.4}>
                     <Heading as="h3" variant="section-title">
                         Gallery
                     </Heading>
                     <Box onClick={() => navigate('/gallery')}>
                         <PhotoGroup imgList={imgList} />
                     </Box>
-                </Section>
+                </Section> */}
             </Container>
         </Layout>
     )

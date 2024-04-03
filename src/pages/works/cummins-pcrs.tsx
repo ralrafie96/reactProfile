@@ -23,17 +23,17 @@ const CumminsPcrs = () => {
                     </Section>
                     <Section delay={0.2}>
                         <ListItem>
-                            Developed responsive and reusable components in Angular, utilizing the ionic component libraries, to visualize and query tables of reports.
+                            Enhanced user experience by developing and implementing a responsive front-end interface using Angular and Ionic component libraries.
                         </ListItem>
                     </Section>
                     <Section delay={0.4}>
                         <ListItem>
-                            Managed data within a PostgresQL database, and developed an ETL script in Python to seamlessly migrate the client data over from Oracle.
+                            Managed data within a PostgreSQL database, and developed an ETL script in Python to seamlessly migrate the client data over from Oracle.
                         </ListItem>
                     </Section>
                     <Section delay={0.6}>
                         <ListItem>
-                            Created several APIs within Amazon Lambda scripts, and migrated the report generation logic over to batch jobs run in Amazon SQS.
+                            Developed and integrated APIs utilizing Amazon Lambda, and migrated business logic over to batch jobs run in Amazon SQS.
                         </ListItem>
                     </Section>
                 </UnorderedList>

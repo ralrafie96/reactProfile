@@ -18,22 +18,22 @@ const CumminsGDC = () => {
                 <UnorderedList ml={4} my={4}>
                     <Section>
                         <ListItem>
-                            Worked with multiple clients to develop the front end of their applications by utilizing knowledge of React and TypeScript.
+                            Worked with multiple clients to develop responsive user interfaces by utilizing knowledge of React and TypeScript.
                         </ListItem>
                     </Section>
                     <Section delay={0.2}>
                         <ListItem>
-                            Handled GraphQL Queries and Mutations to connect an RDS Serverless data source to ReactJS Front-End application.
+                            Integrated GraphQL queries and mutations that interacted with an Amazon RDS PostgreSQL database.
                         </ListItem>
                     </Section>
                     <Section delay={0.4}>
                         <ListItem>
-                            Maintained code for each project in separate repositories using Git and used tools such as GitLab and Jira to keep track of all features.
+                            Maintained code for each client in Git repositories and utilized GitLab and Jira to keep track of implemented and incoming features.
                         </ListItem>
                     </Section>
                     <Section delay={0.6}>
                         <ListItem>
-                            Communicated daily amongst a team and held ceremonies in a Scrum and Agile format.
+                            Conducted thorough code reviews to identify potential areas for improvement, ultimately enhancing code quality across all projects handled by the team.
                         </ListItem>
                     </Section>
                 </UnorderedList>

@@ -19,22 +19,22 @@ const CumminsOBD = () => {
                 <UnorderedList ml={4} my={4}>
                     <Section>
                         <ListItem>
-                            Worked with product managers to build a desktop application that would streamline documentation for certification engineers.
+                            Worked with product managers to build a desktop application that would streamline documentation and workflow management.
                         </ListItem>
                     </Section>
                     <Section delay={0.2}>
                         <ListItem>
-                            Utilized knowledge of Python to consume APIs and conduct business logic, as well as PyQt5 to develop the front end of the application.
+                            Utilized knowledge of Python to consume APIs, conduct business logic, and develop a robust user interface.
                         </ListItem>
                     </Section>
                     <Section delay={0.4}>
                         <ListItem>
-                            Applied parallelism and multiprocessing/threading to tools that ran multiple jobs at a time to prevent GUI locking and increase efficiency.
+                            Identified bottlenecks in existing codebase and utilized multiprocessing to refactor for improved performance and maintainability.
                         </ListItem>
                     </Section>
                     <Section delay={0.6}>
                         <ListItem>
-                            Developed a suite of tests that would be run on a Jenkins pipeline to ensure code functionality with each change made to the codebase.
+                            Improved testing efficiency with the development of automated test scripts using Jenkins and PyTest.
                         </ListItem>
                     </Section>
                 </UnorderedList>

@@ -78,9 +78,9 @@ const NavBar = () => {
                     <LinkItem href="/works" path={location.pathname}>
                         Works
                     </LinkItem>
-                    <LinkItem href="/gallery" path={location.pathname}>
+                    {/* <LinkItem href="/gallery" path={location.pathname}>
                         Gallery
-                    </LinkItem>
+                    </LinkItem> */}
                     <LinkItem href="/contact" path={location.pathname}>
                         Contact
                     </LinkItem>
@@ -97,9 +97,9 @@ const NavBar = () => {
                                 <LinkItem p={0} href='/works' path={location.pathname}>
                                     <MenuItem bg={location.pathname === '/works' ? 'glassTeal' : undefined}>Works</MenuItem>
                                 </LinkItem>
-                                <LinkItem p={0} href='/gallery' path={location.pathname}>
+                                {/* <LinkItem p={0} href='/gallery' path={location.pathname}>
                                     <MenuItem bg={location.pathname === '/gallery' ? 'glassTeal' : undefined}>Gallery</MenuItem>
-                                </LinkItem>
+                                </LinkItem> */}
                                 <LinkItem p={0} href='/contact' path={location.pathname}>
                                     <MenuItem bg={location.pathname === '/contact' ? 'glassTeal' : undefined}>Contact</MenuItem>
                                 </LinkItem>

@@ -39,7 +39,7 @@ const Chatter = () => {
                     </Section>
                     <Section delay={0.8}>
                         <ListItem>
-                            Backend currently uses self-signed certificate, please accept certificate <Link as={ReactRouterLink} to={'https://ec2-3-21-104-103.us-east-2.compute.amazonaws.com:5000/api/auth'}>here</Link> before continuing; Not currently working on mobile
+                            Backend currently uses self-signed certificate, please accept certificate <Link as={ReactRouterLink} to={'https://ec2-3-21-104-103.us-east-2.compute.amazonaws.com:5000/api/auth'}>here</Link> before continuing
                         </ListItem>
                     </Section>
                 </UnorderedList>
@@ -52,7 +52,7 @@ const Chatter = () => {
                             <Meta>Stack</Meta><span>MongoDB / Express / React / Node.js</span>
                         </ListItem>
                         <ListItem>
-                            <Meta>Tools</Meta><span>AWS Amplify / EC2</span>
+                            <Meta>Services</Meta><span>AWS Amplify / Amazon EC2</span>
                         </ListItem>
                     </Section>
                 </List>
